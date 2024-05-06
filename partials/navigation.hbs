@@ -1,0 +1,50 @@
+
+{{#if isSecondary}}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img height="48" width="48" src="{{@site.logo}}" alt="Logo" >
+                <b class="my-auto">{{@site.title}}</b>
+              </a>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                {{#foreach navigation}}
+                <li class="nav-item mx-2">
+                    <a class="nav-link text-start ms-2 ms-lg-0 text-uppercase {{#if current}} active{{/if}}"
+                        href="{{url absolute=" true"}}" title="{{label}}">{{label}}</a>
+                </li>
+                {{/foreach}}
+                <li class="nav-item mx-2 mt-2 mt-lg-0">
+                    <div
+                        class="btn btn-danger" role="button">Download App</div>
+                </li>
+            </ul>
+        </div>
+
+            </div>
+        </nav>
+{{else}}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img height="48" width="48" src="{{@site.logo}}" alt="Logo" >
+                <b class="my-auto">{{@site.title}}</b>
+              </a>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                {{#foreach navigation}}
+                <li class="nav-item mx-2">
+                    <a class="nav-link text-start ms-2 ms-lg-0 text-uppercase {{#if current}} active{{/if}}"
+                        href="{{url absolute=" true"}}" title="{{label}}">{{label}}</a>
+                </li>
+                {{/foreach}}
+                <li class="nav-item mx-2 mt-2 mt-lg-0">
+                    <div 
+                        class="btn btn-danger" role="button">Download App</div>
+                </li>
+            </ul>
+        </div>
+
+            </div>
+        </nav>
+{{/if}}

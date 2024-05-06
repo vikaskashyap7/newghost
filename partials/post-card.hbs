@@ -1,0 +1,24 @@
+<article class="card ">
+    {{#if feature_image}}
+    <a href="{{url}}">
+      <img class="post_feature_image card-img-top post-card-image shadow"
+          srcset="{{img_url feature_image size="s"}} 300w,
+                  {{img_url feature_image size="m"}} 600w,
+                  {{img_url feature_image size="l"}} 1000w,
+                  {{img_url feature_image size="xl"}} 2000w"
+          sizes="(max-width: 1000px) 400px, 800px"
+          src="{{img_url feature_image size="l"}}"
+          alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+          loading="lazy"
+      />
+    </a>
+    {{/if}}
+    <div class="card-body">
+        <a class="post-card-content-link text-decoration-none text-dark" href="{{url}}">
+            <header class="post-card-header">
+                <h5 class="card-title"><b>{{title}}</b></h5>
+            </header>
+            <a href={{url}} class="text-danger text-decoration-none"><b>Read More &nbsp;&nbsp;  <span class="fa-solid fa-arrow-right-long" /></b></a>
+        </a>
+    </div>
+</article>

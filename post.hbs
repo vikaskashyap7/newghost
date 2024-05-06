@@ -1,0 +1,40 @@
+{{!< default}}
+
+{{!-- The tag above means: insert everything in this file
+into the {body} tag of the default.hbs template --}}
+
+
+{{#post}}
+{{!-- Everything inside the #post block pulls data from the post --}}
+<article class=" postpage {{post_class}}">
+   <figure class="article-image w-75 mx-auto">
+    <img class="article-img w-100 rounded " srcset="{{img_url feature_image size=" s"}} 300w, {{img_url feature_image
+            size="m" }} 600w, {{img_url feature_image size="l" }} 1000w, {{img_url feature_image size="xl" }} 2000w"
+            sizes="(min-width: 1400px) 1400px, 92vw" src="{{img_url feature_image size=" xl"}}"
+            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
+   </figure>
+   <div>
+     <h1 class=" text-center a">{{title}}</h1>
+     <div class="mt-4">
+      {{#primary_author}}
+        <div class="d-flex justify-content-center gap-2">
+            <img src="https://icons.getbootstrap.com/assets/icons/person-circle.svg" class="rounded-circle author-profile-image me-1 my-auto " width="30" alt="{{name}}'s Picture" />
+            <div class="fs-4 fw-bolder text-danger">{{name}}</div>
+             <section class="page-meta my-auto">
+                <time class="page-date" datetime="{{date format='YYYY-MM-DD'}}">
+                  {{date format="DD MMMM YYYY"}}
+                </time>
+                {{tags prefix=" on "}}
+              </section>
+        </div>
+      {{/primary_author}}
+     </div>
+       <section class="py-5">
+            <div class="post-page-content" style="text-align: justify;">{{content}}
+            </div>
+        </section>
+        
+   </div>
+</article>
+
+{{/post}}
